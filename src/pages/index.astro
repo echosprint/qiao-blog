@@ -1,16 +1,14 @@
 ---
 import '../styles/global.css'
+import Navigation from '../components/Navigation.astro'
+import Footer from '../components/Footer.astro'
 
-interface SocialLink {
-    platform: string;
-    url: string;
-}
-
-const socialLinks: SocialLink[] = [
-    { platform: 'Mastodon', url: '#' },
-    { platform: 'BlueSky', url: '#' },
-    { platform: 'GitHub', url: '#' }
-];
+const pageData = {
+    title: "Hi, I'm Qiao.",
+    role: "Senior Developer",
+    image: "/placeholder.png",
+    content: "I'm a professional software developer based in China. I specialize in building modern web applications and creating efficient solutions for complex problems. I'm passionate about technology and enjoy sharing my knowledge through writing and speaking engagements."
+};
 ---
 
 <html lang="en">
@@ -22,59 +20,27 @@ const socialLinks: SocialLink[] = [
 		<title>Qiao's Personal Website</title>
 	</head>
 	<body class="bg-gray-50 min-h-screen flex flex-col">
-		<nav class="p-4 bg-white shadow-sm">
-			<div class="max-w-4xl mx-auto flex justify-between items-center">
-				<a href="/" class="flex items-center hover:opacity-80 transition-opacity">
-					<img src="/logo.svg" alt="Qiao's Logo" class="w-8 h-8" />
-				</a>
-				<div class="space-x-6">
-					<a href="/" class="relative text-gray-600 hover:text-gray-900 transition-all pb-1 leading-relaxed after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-0 after:bg-current after:transition-[width] after:duration-300 hover:after:w-full">Home</a>
-					<a href="/blog" class="relative text-gray-600 hover:text-gray-900 transition-all pb-1 leading-relaxed after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-0 after:bg-current after:transition-[width] after:duration-300 hover:after:w-full">Blog</a>
-					<a href="/speaking" class="relative text-gray-600 hover:text-gray-900 transition-all pb-1 leading-relaxed after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-0 after:bg-current after:transition-[width] after:duration-300 hover:after:w-full">Speaking</a>
-					<a href="/contact" class="relative text-gray-600 hover:text-gray-900 transition-all pb-1 leading-relaxed after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-0 after:bg-current after:transition-[width] after:duration-300 hover:after:w-full">Contact</a>
-				</div>
-			</div>
-		</nav>
+		<Navigation />
 
 		<main class="flex-1 max-w-4xl mx-auto px-6 py-8 flex flex-col justify-center">
 			<section class="flex flex-col md:flex-row items-center md:items-start gap-6">
 				<div class="w-32 h-32 md:w-48 md:h-48 flex-shrink-0">
 					<img
-						src="/placeholder.png"
+						src={pageData.image}
 						alt="Qiao's profile picture"
 						class="w-full h-full object-cover rounded-full shadow-lg"
 					/>
 				</div>
 				<div>
-					<h1 class="text-3xl font-bold mb-2">Hi, I'm Qiao.</h1>
-					<h2 class="text-xl text-gray-600 mb-4">Senior Developer</h2>
+					<h1 class="text-3xl font-bold mb-2">{pageData.title}</h1>
+					<h2 class="text-xl text-gray-600 mb-4">{pageData.role}</h2>
 					<p class="text-base text-gray-700 leading-relaxed max-w-2xl">
-						I'm a professional software developer based in China. I specialize in building modern web applications
-						and creating efficient solutions for complex problems. I'm passionate about technology
-						and enjoy sharing my knowledge through writing and speaking engagements.
+						{pageData.content}
 					</p>
 				</div>
 			</section>
 		</main>
 
-		<footer class="bg-gray-100 py-4">
-			<div class="max-w-4xl mx-auto px-6">
-				<div class="flex flex-col items-center gap-3">
-					<div class="flex space-x-3">
-						{socialLinks.map(link => (
-							<a
-								href={link.url}
-								class="px-3 py-1 text-sm bg-white rounded-md text-gray-700 hover:bg-gray-50 transition-colors"
-							>
-								{link.platform}
-							</a>
-						))}
-					</div>
-					<div class="text-sm text-gray-600">
-						© {new Date().getFullYear()} Qiao. All rights reserved.
-					</div>
-				</div>
-			</div>
-		</footer>
+		<Footer />
 	</body>
 </html>
