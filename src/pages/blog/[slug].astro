@@ -1,0 +1,80 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { getCollection } from 'astro:content';
+
+export async function getStaticPaths() {
+  const posts = await getCollection('blog');
+  return posts.map(post => ({
+    params: { slug: post.slug },
+    props: { post },
+  }));
+}
+
+const { post } = Astro.props;
+const { Content } = await post.render();
+---
+
+<Layout title={`${post.data.title} | Qiao's Blog`}>
+  <article class="max-w-4xl mx-auto px-4 py-8 prose prose-lg">
+    <header class="mb-8">
+      <div class="mb-2">
+        <time class="text-gray-500 text-sm">
+          {post.data.pubDate.toLocaleDateString('en-US', {
+            year: 'numeric',
+            month: 'long',
+            day: 'numeric'
+          })}
+        </time>
+        {post.data.category && (
+          <span class="ml-2 text-sm text-gray-500">{post.data.category}</span>
+        )}
+      </div>
+      
+      <h1 class="text-4xl font-bold mb-4">{post.data.title}</h1>
+      
+      {post.data.description && (
+        <p class="text-xl text-gray-600 mb-4">{post.data.description}</p>
+      )}
+      
+      {post.data.tags && (
+        <div class="flex gap-2 flex-wrap">
+          {post.data.tags.map((tag: string) => (
+            <span class="bg-gray-100 text-gray-700 px-2 py-1 rounded-full text-sm">
+              {tag}
+            </span>
+          ))}
+        </div>
+      )}
+    </header>
+
+    <div class="prose prose-lg prose-blue max-w-none">
+      <Content />
+    </div>
+  </article>
+</Layout>
+
+<style is:global>
+  .prose {
+    max-width: 65ch;
+    margin: 0 auto;
+  }
+  
+  .prose h2 {
+    margin-top: 2em;
+    margin-bottom: 1em;
+  }
+  
+  .prose h3 {
+    margin-top: 1.5em;
+    margin-bottom: 0.75em;
+  }
+  
+  .prose ul {
+    list-style-type: disc;
+    padding-left: 1.5em;
+  }
+  
+  .prose p {
+    margin-bottom: 1.5em;
+  }
+</style> 
