@@ -34,11 +34,11 @@ const readingTime = Math.ceil(words / wordsPerMinute);
             day: 'numeric'
           })}
         </time>
-        <span class="mx-2">•</span>
+        <span class="mx-2">/</span>
         <span>{readingTime} min read</span>
         {post.data.category && (
           <>
-            <span class="mx-2">•</span>
+            <span class="mx-2">/</span>
             <span>{post.data.category}</span>
           </>
         )}
