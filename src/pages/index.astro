@@ -1,7 +1,6 @@
 ---
 import '../styles/global.css'
-import Navigation from '../components/Navigation.astro'
-import Footer from '../components/Footer.astro'
+import BaseLayout from '../layouts/BaseLayout.astro'
 
 const pageData = {
     title: "Hi, I'm Qiao.",
@@ -11,36 +10,21 @@ const pageData = {
 };
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Qiao's Personal Website</title>
-	</head>
-	<body class="bg-gray-50 min-h-screen flex flex-col">
-		<Navigation />
-
-		<main class="flex-1 max-w-4xl mx-auto px-6 py-8 flex flex-col justify-center">
-			<section class="flex flex-col md:flex-row items-center md:items-start gap-6">
-				<div class="w-32 h-32 md:w-48 md:h-48 flex-shrink-0">
-					<img
-						src={pageData.image}
-						alt="Qiao's profile picture"
-						class="w-full h-full object-cover rounded-full shadow-lg"
-					/>
-				</div>
-				<div>
-					<h1 class="text-3xl font-bold mb-2">{pageData.title}</h1>
-					<h2 class="text-xl text-gray-600 mb-4">{pageData.role}</h2>
-					<p class="text-base text-gray-700 leading-relaxed max-w-2xl">
-						{pageData.content}
-					</p>
-				</div>
-			</section>
-		</main>
-
-		<Footer />
-	</body>
-</html>
+<BaseLayout title="Qiao's Personal Website">
+    <section class="flex flex-col md:flex-row items-center md:items-start gap-6">
+        <div class="w-32 h-32 md:w-48 md:h-48 flex-shrink-0">
+            <img
+                src={pageData.image}
+                alt="Qiao's profile picture"
+                class="w-full h-full object-cover rounded-full shadow-lg"
+            />
+        </div>
+        <div>
+            <h1 class="text-3xl font-bold mb-2">{pageData.title}</h1>
+            <h2 class="text-xl text-gray-600 mb-4">{pageData.role}</h2>
+            <p class="text-base text-gray-700 leading-relaxed max-w-2xl">
+                {pageData.content}
+            </p>
+        </div>
+    </section>
+</BaseLayout>
