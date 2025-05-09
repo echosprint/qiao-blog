@@ -3,78 +3,182 @@ import BlogLayout from '../../layouts/BlogLayout.astro';
 import { getCollection } from 'astro:content';
 
 export async function getStaticPaths() {
-  const posts = await getCollection('blog');
-  return posts.map(post => ({
+  const posts = await getCollection('blog', ({ data }) => !data.draft);
+  return posts.map((post, index) => ({
     params: { slug: post.slug },
-    props: { post },
+    props: { 
+      post,
+      prev: index > 0 ? posts[index - 1] : null,
+      next: index < posts.length - 1 ? posts[index + 1] : null
+    },
   }));
 }
 
-const { post } = Astro.props;
+const { post, prev, next } = Astro.props;
 const { Content } = await post.render();
+
+// Calculate reading time
+const wordsPerMinute = 200;
+const words = post.body.split(/\s+/).length;
+const readingTime = Math.ceil(words / wordsPerMinute);
 ---
 
 <BlogLayout title={`${post.data.title} | Qiao's Blog`}>
-  <article class="max-w-4xl mx-auto px-4 py-8 prose prose-lg">
-    <header class="mb-8">
-      <div class="mb-2">
-        <time class="text-gray-500 text-sm">
+  <article class="max-w-2xl mx-auto px-4 py-12">
+    <header class="mb-12">
+      <div class="mb-6 flex items-center text-gray-600 text-sm">
+        <time datetime={post.data.pubDate.toISOString()}>
           {post.data.pubDate.toLocaleDateString('en-US', {
             year: 'numeric',
             month: 'long',
             day: 'numeric'
           })}
         </time>
+        <span class="mx-2">•</span>
+        <span>{readingTime} min read</span>
         {post.data.category && (
-          <span class="ml-2 text-sm text-gray-500">{post.data.category}</span>
+          <>
+            <span class="mx-2">•</span>
+            <span>{post.data.category}</span>
+          </>
         )}
       </div>
       
-      <h1 class="text-4xl font-bold mb-4">{post.data.title}</h1>
+      <h1 class="text-4xl font-bold mb-6 leading-tight">{post.data.title}</h1>
       
       {post.data.description && (
-        <p class="text-xl text-gray-600 mb-4">{post.data.description}</p>
-      )}
-      
-      {post.data.tags && (
-        <div class="flex gap-2 flex-wrap">
-          {post.data.tags.map((tag: string) => (
-            <span class="bg-gray-100 text-gray-700 px-2 py-1 rounded-full text-sm">
-              {tag}
-            </span>
-          ))}
-        </div>
+        <p class="text-xl text-gray-600 leading-relaxed">{post.data.description}</p>
       )}
     </header>
 
-    <div class="prose prose-lg prose-blue max-w-none">
+    <div class="prose prose-lg">
       <Content />
     </div>
+
+    {post.data.tags && (
+      <div class="mt-12 pt-6 border-t border-gray-200">
+        <div class="flex gap-3 flex-wrap">
+          {post.data.tags.map((tag: string) => (
+            <a href={`/tags/${tag.toLowerCase()}`} class="text-sm text-gray-600 hover:text-gray-900">
+              #{tag}
+            </a>
+          ))}
+        </div>
+      </div>
+    )}
+
+    <nav class="mt-12 pt-6 border-t border-gray-200 flex justify-between text-sm">
+      {prev && (
+        <a href={`/blog/${prev.slug}`} class="group flex flex-col">
+          <span class="text-gray-600">Newer post</span>
+          <span class="group-hover:text-blue-600 transition-colors">{prev.data.title}</span>
+        </a>
+      )}
+      {next && (
+        <a href={`/blog/${next.slug}`} class="group flex flex-col ml-auto text-right">
+          <span class="text-gray-600">Older post</span>
+          <span class="group-hover:text-blue-600 transition-colors">{next.data.title}</span>
+        </a>
+      )}
+    </nav>
   </article>
 </BlogLayout>
 
 <style is:global>
   .prose {
-    max-width: 65ch;
-    margin: 0 auto;
+    max-width: none;
   }
   
   .prose h2 {
-    margin-top: 2em;
+    font-size: 1.75rem;
+    margin-top: 2.5em;
     margin-bottom: 1em;
+    font-weight: 600;
   }
   
   .prose h3 {
-    margin-top: 1.5em;
+    font-size: 1.5rem;
+    margin-top: 2em;
     margin-bottom: 0.75em;
+    font-weight: 600;
+  }
+  
+  .prose p {
+    margin-bottom: 1.5em;
+    line-height: 1.75;
+  }
+
+  .prose a {
+    color: #2563eb;
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    transition: border-color 0.2s;
+  }
+
+  .prose a:hover {
+    border-bottom-color: currentColor;
   }
   
   .prose ul {
     list-style-type: disc;
     padding-left: 1.5em;
+    margin: 1.5em 0;
   }
-  
-  .prose p {
-    margin-bottom: 1.5em;
+
+  .prose ul li {
+    margin-bottom: 0.75em;
+    line-height: 1.75;
+    padding-left: 0.5em;
+  }
+
+  .prose ul li:last-child {
+    margin-bottom: 0;
+  }
+
+  .prose ol {
+    list-style-type: decimal;
+    padding-left: 1.5em;
+    margin: 1.5em 0;
+  }
+
+  .prose ol li {
+    margin-bottom: 0.75em;
+    line-height: 1.75;
+    padding-left: 0.5em;
+  }
+
+  .prose ol li:last-child {
+    margin-bottom: 0;
+  }
+
+  .prose code {
+    background-color: #f3f4f6;
+    padding: 0.2em 0.4em;
+    border-radius: 0.25em;
+    font-size: 0.875em;
+  }
+
+  .prose pre {
+    background-color: #1f2937;
+    color: #f3f4f6;
+    padding: 1.25em;
+    border-radius: 0.5em;
+    overflow-x: auto;
+    margin: 1.5em 0;
+  }
+
+  .prose pre code {
+    background-color: transparent;
+    padding: 0;
+    border-radius: 0;
+    font-size: 0.875em;
+  }
+
+  .prose blockquote {
+    border-left: 4px solid #e5e7eb;
+    padding-left: 1em;
+    margin: 1.5em 0;
+    font-style: italic;
+    color: #4b5563;
   }
 </style> 
