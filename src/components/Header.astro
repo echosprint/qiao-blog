@@ -1,11 +1,18 @@
 ---
 import Navigation from './Navigation.astro';
+
+const currentPath = Astro.url.pathname;
+const isBlogPage = currentPath.startsWith('/blog') || currentPath.startsWith('/tags');
 ---
 
 <header class="fixed top-0 left-0 right-0 z-50 bg-white shadow-[0_1px_2px_0_rgba(0,0,0,0.03)] transition-transform duration-300" id="main-header">
     <div class="max-w-4xl mx-auto flex items-center justify-between px-6">
         <a href="/" class="flex items-center hover:opacity-80 transition-opacity py-4">
-            <img src="/logo.svg" alt="Qiao's Logo" class="w-8 h-8" />
+            {isBlogPage ? (
+                <span class="text-lg font-medium">Qiao's Blog</span>
+            ) : (
+                <img src="/logo.svg" alt="Qiao's Logo" class="w-8 h-8" />
+            )}
         </a>
         <Navigation />
     </div>
