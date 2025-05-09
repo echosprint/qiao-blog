@@ -1,12 +1,12 @@
 ---
-import Layout from '../layouts/Layout.astro';
+import BlogLayout from '../layouts/BlogLayout.astro';
 import { getCollection } from 'astro:content';
 
 const posts = await getCollection('blog');
 posts.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
 ---
 
-<Layout title="Blog | Qiao's Blog">
+<BlogLayout title="Blog | Qiao's Blog">
   <main class="max-w-4xl mx-auto px-4 py-8">
     <h1 class="text-4xl font-bold mb-8">Blog Posts</h1>
     
@@ -49,7 +49,7 @@ posts.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
       ))}
     </div>
   </main>
-</Layout>
+</BlogLayout>
 
 <style>
   article:last-child {

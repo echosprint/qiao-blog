@@ -1,5 +1,5 @@
 ---
-import Layout from '../../layouts/Layout.astro';
+import BlogLayout from '../../layouts/BlogLayout.astro';
 import { getCollection } from 'astro:content';
 
 export async function getStaticPaths() {
@@ -14,7 +14,7 @@ const { post } = Astro.props;
 const { Content } = await post.render();
 ---
 
-<Layout title={`${post.data.title} | Qiao's Blog`}>
+<BlogLayout title={`${post.data.title} | Qiao's Blog`}>
   <article class="max-w-4xl mx-auto px-4 py-8 prose prose-lg">
     <header class="mb-8">
       <div class="mb-2">
@@ -51,7 +51,7 @@ const { Content } = await post.render();
       <Content />
     </div>
   </article>
-</Layout>
+</BlogLayout>
 
 <style is:global>
   .prose {
