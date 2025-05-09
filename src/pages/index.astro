@@ -1,5 +1,16 @@
 ---
+import '../styles/global.css'
 
+interface SocialLink {
+    platform: string;
+    url: string;
+}
+
+const socialLinks: SocialLink[] = [
+    { platform: 'Mastodon', url: '#' },
+    { platform: 'BlueSky', url: '#' },
+    { platform: 'GitHub', url: '#' }
+];
 ---
 
 <html lang="en">
@@ -8,9 +19,62 @@
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
+		<title>Qiao's Personal Website</title>
 	</head>
-	<body>
-		<h1>Astro</h1>
+	<body class="bg-gray-50">
+		<nav class="p-6 bg-white shadow-sm">
+			<div class="max-w-4xl mx-auto flex justify-between items-center">
+				<a href="/" class="flex items-center hover:opacity-80 transition-opacity">
+					<img src="/logo.svg" alt="Qiao's Logo" class="w-10 h-10" />
+				</a>
+				<div class="space-x-6">
+					<a href="/" class="text-gray-600 hover:text-gray-900">Home</a>
+					<a href="/blog" class="text-gray-600 hover:text-gray-900">Blog</a>
+					<a href="/speaking" class="text-gray-600 hover:text-gray-900">Speaking</a>
+					<a href="/contact" class="text-gray-600 hover:text-gray-900">Contact</a>
+				</div>
+			</div>
+		</nav>
+
+		<main class="max-w-4xl mx-auto px-6 py-12">
+			<section class="mb-12 flex flex-col md:flex-row items-center md:items-start gap-8">
+				<div class="w-48 h-48 md:w-64 md:h-64 flex-shrink-0">
+					<img
+						src="/placeholder.png"
+						alt="Qiao's profile picture"
+						class="w-full h-full object-cover rounded-full shadow-lg"
+					/>
+				</div>
+				<div>
+					<h1 class="text-4xl font-bold mb-4">Hi, I'm Qiao.</h1>
+					<h2 class="text-2xl text-gray-600 mb-6">Senior Developer</h2>
+					<p class="text-lg text-gray-700 leading-relaxed max-w-2xl">
+						I'm a professional software developer based in China. I specialize in building modern web applications
+						and creating efficient solutions for complex problems. I'm passionate about technology
+						and enjoy sharing my knowledge through writing and speaking engagements.
+					</p>
+				</div>
+			</section>
+
+			<section class="mb-12">
+				<h3 class="text-2xl font-semibold mb-4">Social</h3>
+				<div class="flex space-x-4">
+					{socialLinks.map(link => (
+						<a
+							href={link.url}
+							class="px-4 py-2 bg-gray-100 rounded-md text-gray-700 hover:bg-gray-200 transition-colors"
+						>
+							{link.platform}
+						</a>
+					))}
+				</div>
+			</section>
+		</main>
+
+		<footer class="bg-gray-100 mt-12 py-6">
+			<div class="max-w-4xl mx-auto px-6 text-center text-gray-600">
+				© {new Date().getFullYear()} Qiao. All rights reserved.
+			</div>
+		</footer>
 	</body>
 </html>
