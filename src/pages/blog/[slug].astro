@@ -56,7 +56,7 @@ const readingTime = Math.ceil(words / wordsPerMinute);
     </div>
 
     {post.data.tags && (
-      <div class="mt-12 pt-6 border-t border-gray-200">
+      <div class="mt-12">
         <div class="flex gap-3 flex-wrap">
           {post.data.tags.map((tag: string) => (
             <a href={`/tags/${tag.toLowerCase()}`} class="text-sm text-gray-600 hover:text-gray-900">
@@ -180,5 +180,85 @@ const readingTime = Math.ceil(words / wordsPerMinute);
     margin: 1.5em 0;
     font-style: italic;
     color: #4b5563;
+  }
+
+  /* Updated table styles for a more natural look */
+  .prose table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    margin: 1.5em 0;
+    font-size: 0.95em;
+    line-height: 1.5;
+  }
+
+  /* Compact style for tables with fewer columns */
+  .prose table:where(th:nth-last-child(-n+3)) {
+    width: auto;
+    min-width: 50%;
+  }
+
+  /* Base styles for table headers */
+  .prose table th {
+    color: #374151;
+    font-weight: 600;
+    text-align: left;
+    padding: 0.5em 0.75em;
+    position: relative;
+  }
+
+  /* Base styles for table cells */
+  .prose table td {
+    padding: 0.5em 0.75em;
+    color: #4b5563;
+    position: relative;
+  }
+
+  /* Separator styles for normal tables */
+  .prose table:not(:where(th:nth-last-child(-n+3))) th,
+  .prose table:not(:where(th:nth-last-child(-n+3))) td {
+    border-bottom: 1px solid #e5e7eb;
+  }
+
+  /* Shorter separator styles for compact tables */
+  .prose table:where(th:nth-last-child(-n+3)) th::after,
+  .prose table:where(th:nth-last-child(-n+3)) td::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0.75em;
+    right: 0.75em;
+    height: 1px;
+    background: #e5e7eb;
+  }
+
+  /* Remove last row separators */
+  .prose table tr:last-child td::after {
+    display: none;
+  }
+
+  .prose table tr {
+    transition: background-color 0.2s ease;
+  }
+
+  .prose table tr:hover {
+    background-color: #fafafa;
+  }
+
+  /* Center align numeric columns */
+  .prose table td:not(:first-child) {
+    text-align: center;
+  }
+
+  .prose table th:not(:first-child) {
+    text-align: center;
+  }
+
+  /* Additional compact styles for small tables */
+  @media (min-width: 768px) {
+    .prose table:where(th:nth-last-child(-n+3)) {
+      margin-left: 0;
+      margin-right: auto;
+    }
   }
 </style> 
