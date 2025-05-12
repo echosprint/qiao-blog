@@ -1,0 +1,18 @@
+---
+// src/pages/debug-posts.astro
+import { getCollection } from 'astro:content';
+
+// grab everything in the `blog` collection
+const posts = await getCollection('blog');
+---
+
+<h1 class="text-xl font-bold mb-4">Debug blog collection</h1>
+<ul class="space-y-2 font-mono">
+  {posts.map((p) => (
+    <li>
+      <strong>ID:</strong> {p.id}<br />
+      <strong>slug:</strong> {p.slug}
+    </li>
+  ))}
+</ul>
+

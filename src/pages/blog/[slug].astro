@@ -9,8 +9,8 @@ export async function getStaticPaths() {
   });
 
   return posts.map((post, index) => {
-    // Get the full path without the file extension
-    const slug = post.id.replace(/\.md$/, '');
+    // Handle nested paths by replacing directory separators with hyphens
+    const slug = post.slug.replace(/\//g, '-');
     
     return {
       params: { slug },
@@ -78,13 +78,13 @@ const readingTime = Math.ceil(words / wordsPerMinute);
 
     <nav class="mt-12 pt-6 border-t border-gray-200 flex justify-between text-sm">
       {prev && (
-        <a href={`/qiao-blog/blog/${prev.slug}`} class="group flex flex-col">
+        <a href={`/qiao-blog/blog/${prev.slug.replace(/\//g, '-')}`} class="group flex flex-col">
           <span class="text-gray-600">Newer post</span>
           <span class="group-hover:text-blue-600 transition-colors">{prev.data.title}</span>
         </a>
       )}
       {next && (
-        <a href={`/qiao-blog/blog/${next.slug}`} class="group flex flex-col ml-auto text-right">
+        <a href={`/qiao-blog/blog/${next.slug.replace(/\//g, '-')}`} class="group flex flex-col ml-auto text-right">
           <span class="text-gray-600">Older post</span>
           <span class="group-hover:text-blue-600 transition-colors">{next.data.title}</span>
         </a>
