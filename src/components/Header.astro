@@ -2,7 +2,7 @@
 import Navigation from './Navigation.astro';
 
 const currentPath = Astro.url.pathname;
-const isBlogPage = currentPath.startsWith('/blog') || currentPath.startsWith('/tags');
+const isBlogPage = currentPath.startsWith('/qiao-blog/blog') || currentPath.startsWith('/qiao-blog/tags');
 ---
 
 <header class="fixed top-0 left-0 right-0 z-50 bg-white shadow-[0_1px_2px_0_rgba(0,0,0,0.03)] transition-transform duration-300" id="main-header">
