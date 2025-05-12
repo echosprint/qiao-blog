@@ -3,15 +3,26 @@ import BlogLayout from '../../layouts/BlogLayout.astro';
 import { getCollection } from 'astro:content';
 
 export async function getStaticPaths() {
-  const posts = await getCollection('blog', ({ data }) => !data.draft && !data.private);
-  return posts.map((post, index) => ({
-    params: { slug: post.slug },
-    props: { 
-      post,
-      prev: index > 0 ? posts[index - 1] : null,
-      next: index < posts.length - 1 ? posts[index + 1] : null
-    },
-  }));
+  const posts = await getCollection('blog', ({ data, id }) => {
+    // Only include posts that aren't drafts or private
+    // For posts in subdirectories, we use the directory name as the slug
+    return !data.draft && !data.private;
+  });
+
+  return posts.map((post, index) => {
+    // For posts in subdirectories (e.g., "templates/welcome-to-my-blog/index.md")
+    // we want to use the directory name as the slug
+    const slug = post.id.split('/')[0];
+    
+    return {
+      params: { slug },
+      props: { 
+        post,
+        prev: index > 0 ? posts[index - 1] : null,
+        next: index < posts.length - 1 ? posts[index + 1] : null
+      },
+    };
+  });
 }
 
 const { post, prev, next } = Astro.props;
