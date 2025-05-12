@@ -4,6 +4,7 @@ pubDate: 2024-03-26
 description: "A hands-on guide to creating a 2D platformer game using Rust and the Bevy engine, with code examples and performance insights."
 category: "Game Development"
 tags: ["rust", "gamedev", "bevy", "tutorial"]
+private: true
 ---
 
 # 🦀 Game Development with Rust

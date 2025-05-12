@@ -6,6 +6,7 @@ author: "Qiao"
 image: "./images/us-china-trade.png"
 category: "International Trade"
 tags: ["trade war", "economics", "international relations", "China", "USA", "global trade"]
+private: true
 ---
 
 # The US-China Trade War: Impact, Analysis, and Future Outlook

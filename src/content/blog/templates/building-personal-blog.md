@@ -4,6 +4,7 @@ pubDate: 2024-03-24
 description: "A detailed look at how I built this blog using Astro, including technical decisions, challenges, and lessons learned."
 category: "Project Showcase"
 tags: ["astro", "web development", "project", "tailwindcss"]
+private: true
 ---
 
 After years of wanting to start a blog, I finally took the plunge and built one using Astro. In this post, I'll share my experience, technical decisions, and lessons learned along the way.

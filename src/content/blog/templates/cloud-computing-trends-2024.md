@@ -4,11 +4,12 @@ pubDate: 2024-03-21
 description: "Exploring the latest trends and innovations in cloud computing, from serverless to multi-cloud strategies."
 category: "Technology"
 tags: ["cloud", "technology", "trends"]
+private: true
 ---
 
 # Cloud Computing Trends in 2024
 
-![Cloud Computing Infrastructure](../../../public/placeholder.png)
+![Cloud Computing Infrastructure](/placeholder.png)
 
 The cloud computing landscape continues to evolve rapidly in 2024, bringing new opportunities and challenges for businesses and developers alike. In this post, we'll explore the most significant trends shaping the future of cloud computing.
 

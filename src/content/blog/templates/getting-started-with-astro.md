@@ -4,6 +4,7 @@ pubDate: 2024-03-21
 description: "Learn how to build lightning-fast websites using Astro, the modern static site generator."
 category: "Development"
 tags: ["astro", "web development", "javascript", "tutorial"]
+private: true
 ---
 
 Astro is a modern static site generator that allows you to build fast websites using your favorite JavaScript frameworks. In this post, I'll share my experience with Astro and why I chose it for my blog.

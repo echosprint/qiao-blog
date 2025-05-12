@@ -4,6 +4,7 @@ pubDate: 2024-03-22
 description: "A deep dive into TypeScript generics with practical examples and best practices for writing type-safe code."
 category: "Programming"
 tags: ["typescript", "programming", "web development", "tutorial"]
+private: true
 ---
 
 TypeScript generics are one of the most powerful features for writing flexible, reusable, and type-safe code. In this comprehensive guide, we'll explore everything from basic concepts to advanced patterns.

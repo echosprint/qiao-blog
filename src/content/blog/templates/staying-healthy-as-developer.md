@@ -4,6 +4,7 @@ pubDate: 2024-03-25
 description: "Essential health tips and practices for developers who spend long hours at the computer."
 category: "Health"
 tags: ["health", "wellness", "ergonomics", "work-life"]
+private: true
 ---
 
 > "Health is not everything, but without health, everything is nothing."

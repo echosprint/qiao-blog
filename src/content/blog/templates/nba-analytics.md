@@ -4,6 +4,7 @@ pubDate: 2024-03-27
 description: "A deep dive into how the three-point shot has transformed basketball, backed by data analysis and visualizations."
 category: "Sports Analytics"
 tags: ["basketball", "nba", "analytics", "data-science"]
+private: true
 ---
 
 # 📊 The Three-Point Revolution: By the Numbers
