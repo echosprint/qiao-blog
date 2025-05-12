@@ -4,7 +4,7 @@ import BlogLayout from '../../layouts/BlogLayout.astro';
 import BlogPostCard from '../../components/BlogPostCard.astro';
 
 export async function getStaticPaths() {
-  const posts = await getCollection('blog', ({ data }) => !data.draft);
+  const posts = await getCollection('blog', ({ data }) => !data.draft && !data.private);
   
   // Get all unique tags
   const tags = [...new Set(posts.flatMap(post => post.data.tags || []))];
