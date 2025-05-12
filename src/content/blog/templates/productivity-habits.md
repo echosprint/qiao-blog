@@ -4,6 +4,7 @@ pubDate: 2024-03-23
 description: "Personal insights and practical tips for improving productivity and maintaining work-life balance as a software developer."
 category: "Personal Development"
 tags: ["productivity", "personal growth", "work-life balance", "career"]
+private: true
 ---
 
 As developers, we're constantly juggling multiple projects, learning new technologies, and trying to maintain a healthy work-life balance. Over the years, I've developed several habits that have significantly improved my productivity and overall well-being. Here are the five most impactful ones.

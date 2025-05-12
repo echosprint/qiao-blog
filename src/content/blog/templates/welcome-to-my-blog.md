@@ -4,6 +4,7 @@ pubDate: 2024-03-20
 description: "An introduction to my new blog where I'll share my thoughts and experiences."
 category: "General"
 tags: ["introduction", "personal"]
+private: true
 ---
 
 Hello and welcome to my blog! This is where I'll be sharing my thoughts, experiences, and insights about technology, programming, and life in general.
