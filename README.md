@@ -25,22 +25,22 @@ cd qiao-blog
 
 2. Install dependencies:
 ```bash
-npm install
+pnpm install
 ```
 
 3. Run the development server:
 ```bash
-npm run dev
+pnpm run dev
 ```
 
 4. Build for production:
 ```bash
-npm run build
+pnpm run build
 ```
 
 5. Preview the production build:
 ```bash
-npm run preview
+pnpm run preview
 ```
 
 ## Project Structure
@@ -48,6 +48,7 @@ npm run preview
 - `src/pages/` - Contains all the pages of the website
 - `src/layouts/` - Contains layout components
 - `public/` - Static assets like images
+- `content/blog/` - Contains blog posts in markdown format. Posts can be marked as private by setting the `private` frontmatter property
 
 ## Version
 
