@@ -1,7 +1,23 @@
+---
+const currentPath = Astro.url.pathname;
+---
+
 <nav>
     <div class="space-x-6">
-        <a href="/qiao-blog/" class="relative text-gray-600 hover:text-gray-900 transition-all pb-1 leading-relaxed after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-0 after:bg-current after:transition-[width] after:duration-300 hover:after:w-full">Home</a>
-        <a href="/qiao-blog/blog" class="relative text-gray-600 hover:text-gray-900 transition-all pb-1 leading-relaxed after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-0 after:bg-current after:transition-[width] after:duration-300 hover:after:w-full">Blog</a>
-        <a href="/qiao-blog/contact" class="relative text-gray-600 hover:text-gray-900 transition-all pb-1 leading-relaxed after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-0 after:bg-current after:transition-[width] after:duration-300 hover:after:w-full">Contact</a>
+        <a href="/qiao-blog/" class:list={[
+            "relative text-gray-600 hover:text-gray-900 transition-all pb-1 leading-relaxed",
+            "after:absolute after:bottom-0 after:left-0 after:h-[2px] after:bg-current after:transition-[width] after:duration-300",
+            currentPath === "/qiao-blog/" ? "text-gray-900 after:w-full" : "after:w-0 hover:after:w-full"
+        ]}>Home</a>
+        <a href="/qiao-blog/blog" class:list={[
+            "relative text-gray-600 hover:text-gray-900 transition-all pb-1 leading-relaxed",
+            "after:absolute after:bottom-0 after:left-0 after:h-[2px] after:bg-current after:transition-[width] after:duration-300",
+            currentPath.startsWith("/qiao-blog/blog") ? "text-gray-900 after:w-full" : "after:w-0 hover:after:w-full"
+        ]}>Blog</a>
+        <a href="/qiao-blog/contact" class:list={[
+            "relative text-gray-600 hover:text-gray-900 transition-all pb-1 leading-relaxed",
+            "after:absolute after:bottom-0 after:left-0 after:h-[2px] after:bg-current after:transition-[width] after:duration-300",
+            currentPath === "/qiao-blog/contact" ? "text-gray-900 after:w-full" : "after:w-0 hover:after:w-full"
+        ]}>Contact</a>
     </div>
 </nav> 
