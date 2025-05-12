@@ -5,14 +5,12 @@ import { getCollection } from 'astro:content';
 export async function getStaticPaths() {
   const posts = await getCollection('blog', ({ data, id }) => {
     // Only include posts that aren't drafts or private
-    // For posts in subdirectories, we use the directory name as the slug
     return !data.draft && !data.private;
   });
 
   return posts.map((post, index) => {
-    // For posts in subdirectories (e.g., "templates/welcome-to-my-blog/index.md")
-    // we want to use the directory name as the slug
-    const slug = post.id.split('/')[0];
+    // Get the full path without the file extension
+    const slug = post.id.replace(/\.md$/, '');
     
     return {
       params: { slug },
