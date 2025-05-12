@@ -1,47 +1,54 @@
-# Astro Starter Kit: Minimal
+# Qiao's Personal Website
 
-```sh
-pnpm create astro@latest -- --template minimal
+This is the source code for my personal website/blog where I share my thoughts and experiences about Math, Machine Learning, and cutting-edge AI technologies.
+
+## Technologies Used
+
+- [Astro](https://astro.build/) - The web framework for content-driven websites
+- [TailwindCSS](https://tailwindcss.com/) - For styling and responsive design
+- Tailwind Typography - For beautiful typography
+
+## Features
+
+- Modern, responsive design
+- Fast and optimized performance with Astro
+- Clean and minimalist UI
+- Personal introduction and profile
+
+## Getting Started
+
+1. Clone the repository:
+```bash
+git clone [repository-url]
+cd qiao-blog
 ```
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/minimal)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/minimal)
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/minimal/devcontainer.json)
-
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
-
-## 🚀 Project Structure
-
-Inside of your Astro project, you'll see the following folders and files:
-
-```text
-/
-├── public/
-├── src/
-│   └── pages/
-│       └── index.astro
-└── package.json
+2. Install dependencies:
+```bash
+npm install
 ```
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+3. Run the development server:
+```bash
+npm run dev
+```
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+4. Build for production:
+```bash
+npm run build
+```
 
-Any static assets, like images, can be placed in the `public/` directory.
+5. Preview the production build:
+```bash
+npm run preview
+```
 
-## 🧞 Commands
+## Project Structure
 
-All commands are run from the root of the project, from a terminal:
+- `src/pages/` - Contains all the pages of the website
+- `src/layouts/` - Contains layout components
+- `public/` - Static assets like images
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `pnpm install`             | Installs dependencies                            |
-| `pnpm dev`             | Starts local dev server at `localhost:4321`      |
-| `pnpm build`           | Build your production site to `./dist/`          |
-| `pnpm preview`         | Preview your build locally, before deploying     |
-| `pnpm astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `pnpm astro -- --help` | Get help using the Astro CLI                     |
+## Version
 
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+Current version: 0.0.1
