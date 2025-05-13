@@ -24,4 +24,4 @@ Writing is **second-order thinking**. When an idea survives the trip from brain 
 
 New posts should land roughly once a week (yes, that’s a public commitment).  
 If any of this resonates, subscribe, or ping me on GitHub.  
-See you in the next post! 🚀
+See you in the next post~ 🚀
