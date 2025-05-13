@@ -35,7 +35,7 @@ const readingTime = Math.ceil(words / wordsPerMinute);
 <BlogLayout title={`${post.data.title} | Qiao's Blog`}>
   <article class="max-w-2xl mx-auto px-4 py-12">
     <header class="mb-12">
-      <div class="mb-6 flex items-center text-gray-600 text-sm">
+      <div class="mb-6 flex items-center text-gray-500 dark:text-gray-400 text-sm">
         <time datetime={post.data.pubDate.toISOString()}>
           {post.data.pubDate.toLocaleDateString('en-US', {
             year: 'numeric',
@@ -53,14 +53,14 @@ const readingTime = Math.ceil(words / wordsPerMinute);
         )}
       </div>
       
-      <h1 class="text-4xl font-bold mb-6 leading-tight">{post.data.title}</h1>
+      <h1 class="text-4xl font-bold mb-6 leading-tight text-gray-900 dark:text-white">{post.data.title}</h1>
       
       {post.data.description && (
-        <p class="text-xl text-gray-600 leading-relaxed">{post.data.description}</p>
+        <p class="text-xl text-gray-700 dark:text-gray-200 leading-relaxed">{post.data.description}</p>
       )}
     </header>
 
-    <div class="prose prose-lg">
+    <div class="prose prose-lg dark:prose-invert prose-pre:bg-gray-800 prose-pre:text-gray-100 prose-a:text-blue-600 dark:prose-a:text-blue-400 hover:prose-a:text-blue-500 dark:hover:prose-a:text-blue-300 prose-headings:text-gray-900 dark:prose-headings:text-white prose-p:text-gray-700 dark:prose-p:text-gray-200">
       <Content />
     </div>
 
@@ -68,7 +68,7 @@ const readingTime = Math.ceil(words / wordsPerMinute);
       <div class="mt-12">
         <div class="flex gap-3 flex-wrap">
           {post.data.tags.map((tag: string) => (
-            <a href={`/qiao-blog/tags/${tag.toLowerCase()}`} class="text-sm text-gray-600 hover:text-gray-900">
+            <a href={`/qiao-blog/tags/${tag.toLowerCase()}`} class="text-sm text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-200 transition-colors">
               #{tag}
             </a>
           ))}
@@ -76,17 +76,17 @@ const readingTime = Math.ceil(words / wordsPerMinute);
       </div>
     )}
 
-    <nav class="mt-12 pt-6 border-t border-gray-200 flex justify-between text-sm">
+    <nav class="mt-12 pt-6 border-t border-gray-200 dark:border-gray-700 flex justify-between text-sm">
       {prev && (
         <a href={`/qiao-blog/blog/${prev.slug.replace(/\//g, '-')}`} class="group flex flex-col">
-          <span class="text-gray-600">Newer post</span>
-          <span class="group-hover:text-blue-600 transition-colors">{prev.data.title}</span>
+          <span class="text-gray-500 dark:text-gray-400">Newer post</span>
+          <span class="text-gray-900 dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">{prev.data.title}</span>
         </a>
       )}
       {next && (
         <a href={`/qiao-blog/blog/${next.slug.replace(/\//g, '-')}`} class="group flex flex-col ml-auto text-right">
-          <span class="text-gray-600">Older post</span>
-          <span class="group-hover:text-blue-600 transition-colors">{next.data.title}</span>
+          <span class="text-gray-500 dark:text-gray-400">Older post</span>
+          <span class="text-gray-900 dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">{next.data.title}</span>
         </a>
       )}
     </nav>
@@ -118,7 +118,6 @@ const readingTime = Math.ceil(words / wordsPerMinute);
   }
 
   .prose a {
-    color: #2563eb;
     text-decoration: none;
     border-bottom: 1px solid transparent;
     transition: border-color 0.2s;
@@ -168,8 +167,6 @@ const readingTime = Math.ceil(words / wordsPerMinute);
   }
 
   .prose pre {
-    background-color: #1f2937;
-    color: #f3f4f6;
     padding: 1.25em;
     border-radius: 0.5em;
     overflow-x: auto;
@@ -191,7 +188,11 @@ const readingTime = Math.ceil(words / wordsPerMinute);
     color: #4b5563;
   }
 
-  /* Updated table styles for a more natural look */
+  .dark .prose blockquote {
+    border-left-color: #374151;
+    color: #9ca3af;
+  }
+
   .prose table {
     width: 100%;
     border-collapse: separate;
@@ -201,73 +202,31 @@ const readingTime = Math.ceil(words / wordsPerMinute);
     line-height: 1.5;
   }
 
-  /* Compact style for tables with fewer columns */
-  .prose table:where(th:nth-last-child(-n+3)) {
-    width: auto;
-    min-width: 50%;
-  }
-
-  /* Base styles for table headers */
   .prose table th {
-    color: #374151;
     font-weight: 600;
     text-align: left;
     padding: 0.5em 0.75em;
-    position: relative;
-  }
-
-  /* Base styles for table cells */
-  .prose table td {
-    padding: 0.5em 0.75em;
-    color: #4b5563;
-    position: relative;
-  }
-
-  /* Separator styles for normal tables */
-  .prose table:not(:where(th:nth-last-child(-n+3))) th,
-  .prose table:not(:where(th:nth-last-child(-n+3))) td {
     border-bottom: 1px solid #e5e7eb;
   }
 
-  /* Shorter separator styles for compact tables */
-  .prose table:where(th:nth-last-child(-n+3)) th::after,
-  .prose table:where(th:nth-last-child(-n+3)) td::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0.75em;
-    right: 0.75em;
-    height: 1px;
-    background: #e5e7eb;
+  .dark .prose table th {
+    border-bottom-color: #374151;
   }
 
-  /* Remove last row separators */
-  .prose table tr:last-child td::after {
-    display: none;
+  .prose table td {
+    padding: 0.5em 0.75em;
+    border-bottom: 1px solid #e5e7eb;
   }
 
-  .prose table tr {
-    transition: background-color 0.2s ease;
+  .dark .prose table td {
+    border-bottom-color: #374151;
   }
 
   .prose table tr:hover {
-    background-color: #fafafa;
+    background-color: #f9fafb;
   }
 
-  /* Center align numeric columns */
-  .prose table td:not(:first-child) {
-    text-align: center;
-  }
-
-  .prose table th:not(:first-child) {
-    text-align: center;
-  }
-
-  /* Additional compact styles for small tables */
-  @media (min-width: 768px) {
-    .prose table:where(th:nth-last-child(-n+3)) {
-      margin-left: 0;
-      margin-right: auto;
-    }
+  .dark .prose table tr:hover {
+    background-color: #1f2937;
   }
 </style> 
