@@ -1,6 +1,6 @@
 ---
 title: "A Simulation Universe: A Thought Experiment"
-pubDate: 2024-05-15
+pubDate: 2025-05-15
 description: "If we are living in a simulation, can we ever know it? "
 category: "Metaphysics"
 tags: ["existence", "time", "philosopy of reality"]
