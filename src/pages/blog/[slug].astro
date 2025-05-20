@@ -79,13 +79,13 @@ const readingTime = Math.ceil(words / wordsPerMinute);
     <nav class="mt-12 pt-6 border-t border-gray-200 dark:border-gray-700 flex justify-between text-sm">
       {prev && (
         <a href={`/qiao-blog/blog/${prev.slug.replace(/\//g, '-')}`} class="group flex flex-col">
-          <span class="text-gray-500 dark:text-gray-400">Newer post</span>
+          <span class="text-gray-500 dark:text-gray-400">Older post</span>
           <span class="text-gray-900 dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">{prev.data.title}</span>
         </a>
       )}
       {next && (
         <a href={`/qiao-blog/blog/${next.slug.replace(/\//g, '-')}`} class="group flex flex-col ml-auto text-right">
-          <span class="text-gray-500 dark:text-gray-400">Older post</span>
+          <span class="text-gray-500 dark:text-gray-400">Newer post</span>
           <span class="text-gray-900 dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">{next.data.title}</span>
         </a>
       )}
