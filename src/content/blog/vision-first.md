@@ -70,3 +70,10 @@ Separating cognition from presentation preserves interpretability and modularity
 Let the LVM think in entity space.
 Let the renderer draw.
 
+## Specialists vs. Generalists: Efficiency through Inference
+
+While LLMs aim to be encyclopedic generalists, they often lack basic common sense and physical grounding. Their knowledge comes from patterns in text—not from firsthand interaction with the world. In contrast, Large Vision Models (LVMs) can be trained from the ground up on physical laws. Before reading a single word, an LVM can understand fundamental principles like gravity, inertia, and friction—gained through exposure to simulated or embodied environments. This leads to a **reason-first intelligence** rooted in causality and experience.
+
+LLMs store vast amounts of factual knowledge across billions of parameters, and they often respond with high confidence—even when incorrect. While this enables surface-level fluency, only a small portion of their architecture supports real reasoning. LVMs take the reverse approach: rather than memorizing knowledge, they learn to **reason from perception**. They start with dynamics and interaction, not text. As a result, they can be **smaller, more energy-efficient**, and more adaptable.
+
+An LVM doesn’t need to know everything—it only needs to understand how to learn and adapt. Like a specialist, it focuses on inference in context. When detailed knowledge is needed, it can query an external source—loading information **on demand**, much like Neo in _The Matrix_ downloads a skill to act. This modularity—separating **ability** from **stored knowledge**—could be the key to building intelligent agents that are not just powerful, but **efficient, grounded, and focused**.
