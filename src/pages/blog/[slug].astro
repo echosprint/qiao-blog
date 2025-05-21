@@ -8,6 +8,9 @@ export async function getStaticPaths() {
     return !data.draft && !data.private;
   });
 
+  // Sort posts by date in descending order (newest first)
+  posts.sort((a, b) => a.data.pubDate.valueOf() - b.data.pubDate.valueOf());
+
   return posts.map((post, index) => {
     // Handle nested paths by replacing directory separators with hyphens
     const slug = post.slug.replace(/\//g, '-');
