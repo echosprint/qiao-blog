@@ -4,7 +4,7 @@ title: "Vision First: Rethinking the Path to AGI"
 pubDate: 2025-05-20
 description: "Why vision—not language—is the foundation of true artificial general intelligence."
 category: "AGI"
-tags: ["AGI", "vision", "perception"]
+tags: ["AGI", "vision", "perception", "AI"]
 private: false
 ---
 
@@ -77,3 +77,16 @@ While LLMs aim to be encyclopedic generalists, they often lack basic common sens
 LLMs store vast amounts of factual knowledge across billions of parameters, and they often respond with high confidence—even when incorrect. While this enables surface-level fluency, only a small portion of their architecture supports real reasoning. LVMs take the reverse approach: rather than memorizing knowledge, they learn to **reason from perception**. They start with dynamics and interaction, not text. As a result, they can be **smaller, more energy-efficient**, and more adaptable.
 
 An LVM doesn’t need to know everything—it only needs to understand how to learn and adapt. Like a specialist, it focuses on inference in context. When detailed knowledge is needed, it can query an external source—loading information **on demand**, much like Neo in _The Matrix_ downloads a skill to act. This modularity—separating **ability** from **stored knowledge**—could be the key to building intelligent agents that are not just powerful, but **efficient, grounded, and focused**.
+
+
+## Real-Time Embodiment: Fast, Local, and Common Sense
+
+When AI enters the physical world—as a household assistant, robotic chef, babysitter, or caregiver—it must act in real time. Embodied AI agents can’t afford multi-second delays. They must respond with sub-100ms latency, just like humans relying on their fast-reacting "System 1" thinking. Delayed responses aren’t just inefficient—they can be dangerous.
+
+For safety, reliability, and responsiveness, real-time AI must run **locally**. Dependence on cloud infrastructure introduces latency and vulnerability to network instability or cyberattacks. While cloud access can provide occasional knowledge updates or coordination, it must not be a requirement for core operations.
+
+This is where LVMs shine. By design, they are **compact, fast, and grounded in common sense**. They discard encyclopedic knowledge in favor of the everyday reasoning needed for real-life interaction. They operate efficiently on limited hardware, consuming less power and enabling real-time action—an essential quality for embedded systems in physical environments.
+
+Crucially, LVMs use **vision as their primary input modality**. In embodied settings, they share the same **visual viewport** as the humans they interact with. This alignment dramatically reduces communication overhead: when both agent and human see the same thing, instructions and feedback become more intuitive and efficient. There’s no need to translate between disembodied commands and visual perception—the model sees what we see.
+
+That makes LVMs a natural fit for real-world agents. They don’t need to generate responses from massive textual corpora. They need to perceive, act, and adjust in real time. Intelligence, when embodied, must be **fast, local, and aligned with human context**. LVMs are uniquely positioned to meet that challenge.
