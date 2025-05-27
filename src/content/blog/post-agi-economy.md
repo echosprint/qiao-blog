@@ -1,7 +1,7 @@
 ---
 title: "The Post-AGI Economy: Between Innovation and Instability"
 pubDate: 2025-05-28
-description: "As AGI advances, it reshapes the economy without creating new sectors. Can we survive the disruption on the road to superintelligence?"
+description: "The Syndrome of Insufficient Demand in the AGI Era"
 category: "Economy"
 tags: ["AGI", "economics", "humanity", "extinction"]
 private: false
