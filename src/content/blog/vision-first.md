@@ -90,3 +90,30 @@ This is where LVMs shine. By design, they are **compact, fast, and grounded in c
 Crucially, LVMs use **vision as their primary input modality**. In embodied settings, they share the same **visual viewport** as the humans they interact with. This alignment dramatically reduces communication overhead: when both agent and human see the same thing, instructions and feedback become more intuitive and efficient. There’s no need to translate between disembodied commands and visual perception—the model sees what we see.
 
 That makes LVMs a natural fit for real-world agents. They don’t need to generate responses from massive textual corpora. They need to perceive, act, and adjust in real time. Intelligence, when embodied, must be **fast, local, and aligned with human context**. LVMs are uniquely positioned to meet that challenge.
+
+## Curriculum Matters: Teaching AGI Step by Step
+
+One of the most overlooked ingredients in AGI development is **curriculum**. Just like a child, an intelligent system must not be thrown into the deep end from the start. It needs structure—a **learning path** that gradually builds complexity, where each stage prepares the foundation for the next.
+
+We must begin with **Course 101**: the static 3D world. Teach the model to recognize objects from multiple angles and distances, developing an understanding of **invariance**—that a chair remains a chair whether viewed from the top, side, or behind. From here, the model must learn the rules of dynamics: motion, gravity, friction. Frame prediction becomes a tool to understand causality. What happens if a ball rolls off a table? How does liquid move in a cup?
+
+Only after grounding in perception and physics do we introduce **stories** through picture books—simple narratives that link visual sequences to meaning. Then, like human education, the system progresses through increasingly abstract and symbolic content: from grade school texts to junior high curricula, from high school science to university-level math, physics, and literature.
+
+This approach contrasts sharply with current LLM training, which treats all text as equal, thrown into one massive undifferentiated dataset. An LVM—or any candidate AGI—should treat knowledge **hierarchically**: some concepts are **prerequisites** for others, some abilities must **precede** others.
+
+By following a curriculum that mirrors human learning—easy before hard, concrete before abstract—we enable more **efficient training**, better generalization, and interpretable progress. Just as students take tests to demonstrate understanding at each level, AGI should be evaluated at each stage of its development. This structure transforms training from a brute-force pattern-matching process into true **education**.
+
+## Reinforcement Learning as Homework: Evaluation Beyond Pretraining
+
+In the journey toward AGI, the conventional separation between **pretraining**, **fine-tuning**, and **inference**—so dominant in LLMs—may not apply. Instead, training becomes more continuous and interactive, much like how children learn.
+
+Think of classroom learning: the teacher explains the concept during the lesson, but the true understanding is tested after class—through **homework**. Similarly, in AGI training, **reinforcement learning (RL)** acts as the mechanism for post-lesson verification. It doesn't just come at the end. It plays a role **at every stage**.
+
+After the LVM completes a prediction—be it the next frame in a simulation or the next page of a visual story—we need to assess: **Was the concept truly learned?** Did the model generalize the underlying principle, or merely overfit to surface patterns?
+
+This is where RL steps in. It formulates **verifiable tasks** based on the lesson just covered. These tasks can be framed as interactive questions, scene-based decisions, or fill-in-the-blank challenges. The model must act, choose, or generate structured responses. Success earns reward; failure triggers feedback.
+
+By integrating **self-supervised learning** with **reinforcement-based evaluation**, we turn passive prediction into **active understanding**. RL becomes the homework checker, constantly testing whether the AGI has mastered each lesson before it moves on. Not as a separate training phase, but as a **built-in loop of learning and assessment** throughout the developmental curriculum.
+
+This continuous cycle of learn → act → verify forms the backbone of a robust, interpretable, and adaptive AGI pipeline.
+
