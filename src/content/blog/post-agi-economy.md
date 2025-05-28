@@ -1,5 +1,5 @@
 ---
-title: "Supply Without Demand: The Syndrome of the AGI Economy"
+title: "Insufficient Demand: The Syndrome of the AGI Economy"
 pubDate: 2025-05-28
 description: "As AGI displaces human labor and amplifies production, it severs the link between work and consumption—ushering in an era defined by the syndrome of insufficient demand."
 category: "Economy"
