@@ -1,7 +1,7 @@
 ---
-title: "The Post-AGI Economy: Between Innovation and Instability"
+title: "Supply Without Demand: The Syndrome of the AGI Economy"
 pubDate: 2025-05-28
-description: "The Syndrome of Insufficient Demand in the AGI Era"
+description: "As AGI displaces human labor and amplifies production, it severs the link between work and consumption—ushering in an era defined by the syndrome of insufficient demand."
 category: "Economy"
 tags: ["AGI", "economics", "humanity", "extinction"]
 private: false
