@@ -117,3 +117,15 @@ By integrating **self-supervised learning** with **reinforcement-based evaluatio
 
 This continuous cycle of learn → act → verify forms the backbone of a robust, interpretable, and adaptive AGI pipeline.
 
+## World Model: Sight Brings Structure
+
+Does a language model have a world model? In a limited sense—yes. Any intelligent system capable of navigating or reasoning about the world must maintain an internal representation of it. LLMs infer world structure by consuming vast quantities of text, much like a blindfolded reader trying to understand reality through storytelling alone. They piece together geography, physics, and causality from secondhand descriptions—slowly, noisily, and often ambiguously.
+
+Consider geography: for an LLM to learn that France borders Germany, it must encounter this fact across various textual patterns and contexts. There is no spatial grounding—only statistical correlation. It's like learning to navigate Earth by reading millions of travel diaries.
+
+In contrast, an LVM with vision can grasp this in an instant. Show it a map, and spatial relationships become immediately clear. It sees proximity, topology, scale. A single image can encode what thousands of sentences might only approximate.
+
+This is the power of perceptual world modeling. Where LLMs reconstruct the world through symbolic inference, LVMs observe and encode it directly. Their world models are grounded not just in symbols, but in structure and space.
+
+A true AGI must build, maintain, and revise its world model. The more efficiently it can form this model—through vision, interaction, and simulation—the more effectively it can reason, plan, and act. For this, sight isn’t optional—it’s essential.
+
