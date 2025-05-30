@@ -33,7 +33,7 @@ const { post } = Astro.props;
       )}
     </div>
     
-    <h2 class="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+    <h2 class="text-2xl font-bold tracking-tight text-gray-900 dark:text-gray-100">
       <a 
         href={`/qiao-blog/blog/${post.slug.replace(/\//g, '-')}`} 
         class="relative"
@@ -45,7 +45,7 @@ const { post } = Astro.props;
     </h2>
     
     {post.data.description && (
-      <p class="text-gray-700 dark:text-gray-200 leading-relaxed">{post.data.description}</p>
+      <p class="text-gray-700 dark:text-gray-300 leading-relaxed">{post.data.description}</p>
     )}
     
     {post.data.tags && (
@@ -53,7 +53,7 @@ const { post } = Astro.props;
         {post.data.tags.map((tag: string) => (
           <a
             href={`/qiao-blog/tags/${tag.toLowerCase()}`}
-            class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors duration-200"
+            class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors duration-200"
           >
             #{tag}
           </a>
